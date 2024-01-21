@@ -5,8 +5,7 @@
     <classes>
       <class name="restassuredvalidation.DiffWaysToCreatePostRequests">
         <methods>
-          <include name="deleteStudentRecord1"/>
-          <include name="postTestUsingorgJson"/>
+          <include name="postTestUsingPojo"/>
         </methods>
       </class> <!-- restassuredvalidation.DiffWaysToCreatePostRequests -->
     </classes>

@@ -3,6 +3,9 @@ package restassuredvalidation;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.testng.annotations.Test;
+
+import restassuredtesting.restassuredtesting.Pojo_PostRequest;
+
 import static io.restassured.RestAssured.*;
 import static io.restassured.matcher.RestAssuredMatchers.*;
 import static org.hamcrest.Matchers.*;
@@ -38,7 +41,7 @@ public class DiffWaysToCreatePostRequests {
 	}
 	//create Post Request body requests using org.json library
 
-	 @Test(priority = 1)
+	// @Test(priority = 1)
 	public void postTestUsingorgJson() throws JSONException {
 		
 		JSONObject data = new JSONObject();
@@ -62,10 +65,25 @@ public class DiffWaysToCreatePostRequests {
 
 	}
 
-	 @Test(priority = 2, dependsOnMethods = {"postTestUsingorgJson"})
+	// @Test(priority = 2, dependsOnMethods = {"postTestUsingorgJson"})
 	public void deleteStudentRecord1() {
 		given().when().delete("http://localhost:3000/students/6").then().statusCode(200);
 
 	}
 	//create Post Request body requests using POJO class
+	
+	 @Test(priority = 1)
+		public void postTestUsingPojo() {
+		 Pojo_PostRequest data = new Pojo_PostRequest();
+		 data.setName("Sui");
+		 data.setPhone("2345354290");
+		 String courseArr[] = { "Java","C" };
+		 data.setCourses(courseArr);
+		 given().contentType("application/json").body(data).when().post("http://localhost:3000/students").then()
+			.statusCode(201).body("name", equalTo("Sui")).body("phone", equalTo("2345354290"))
+			.body("courses[0]", equalTo("Java")).body("courses[1]", equalTo("C"))
+			.header("Content-Type", "application/json; charset=utf-8").log().all();
+		 
+		 
+}
 }
