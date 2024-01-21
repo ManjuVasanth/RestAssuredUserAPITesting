@@ -15,6 +15,7 @@ public class DiffWaysToCreatePostRequests {
 	 * Ways to create Post Request body requests 1. using HashMap 2.using org.json
 	 * 3. using POJO 4. external json file data
 	 */
+	//create Post Request body requests using HashMap
 	//@Test(priority = 1)
 	public void postTestUsingHashMap() {
 		HashMap<String, Object> data = new HashMap<>();
@@ -35,6 +36,7 @@ public class DiffWaysToCreatePostRequests {
 		given().when().delete("http://localhost:3000/students/6").then().statusCode(200);
 
 	}
+	//create Post Request body requests using org.json library
 
 	 @Test(priority = 1)
 	public void postTestUsingorgJson() throws JSONException {
@@ -65,4 +67,5 @@ public class DiffWaysToCreatePostRequests {
 		given().when().delete("http://localhost:3000/students/6").then().statusCode(200);
 
 	}
+	//create Post Request body requests using POJO class
 }
