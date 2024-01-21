@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="restassuredvalidation.HttpRequests">
+      <class name="restassuredvalidation.DiffWaysToCreatePostRequests">
         <methods>
-          <include name="updateUser"/>
+          <include name="deleteStudentRecord1"/>
+          <include name="postTestUsingorgJson"/>
         </methods>
-      </class> <!-- restassuredvalidation.HttpRequests -->
+      </class> <!-- restassuredvalidation.DiffWaysToCreatePostRequests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
