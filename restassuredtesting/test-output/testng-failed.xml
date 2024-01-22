@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="restassuredvalidation.DiffWaysToCreatePostRequests">
+      <class name="restassuredpathandquery.CookiesDemo">
         <methods>
-          <include name="postTestUsingJsonFile"/>
-          <include name="deleteStudentRecord3"/>
+          <include name="testCookies"/>
         </methods>
-      </class> <!-- restassuredvalidation.DiffWaysToCreatePostRequests -->
+      </class> <!-- restassuredpathandquery.CookiesDemo -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
